@@ -1,0 +1,17 @@
+- PRISMA
+    - VENTAJAS
+        - Auto genera migraciones al detectar cambio en el schema
+        - Tiene soporte de Enums
+    - DESVENTAJAS
+        - El schema debe estar en un solo archivo por lo que podría ser enorme (existen herramientas como aurora para separarlo en varios archivos y con un comando generar un unico schema) https://github.com/sabinadams/aurora
+        - No tiene control de modelos, por lo que habria que crearlos manualmente para agregar comportamientos especificos en cada tabla.
+        - Al no tener manejar modelos, no tiene funciones como beforeSave, pero tiene middlewares, que te permiten agregar ese tipo de funcionalidades, el problema seria como organizar los archivos para utilizarlos.
+        - Hay que aprender la sintaxis de prisma.
+
+- SEQUELIZE
+    - VENTAJAS
+        - Sintaxis sencilla ya que funciona con puro JS.
+        - Puedes crear modelos con clases por lo que puedes crear funciones en los modelos con comportamientos especificos.
+    - DESVENTAJAS
+        - NO GENERA MIGRACIONES AUTOMATICAMENTE, tienes que generar las migraciones manualmente por lo que duplicas CODIGO
+        - Existen herramientas como https://github.com/Scimonster/sequelize-auto-migrations y https://github.com/mrvmv/sequelize-mig que te permiten generar migraciones automaticamente, pero son deficientes, y les faltan funcionalidades como renombrar columnas por lo que puede ser peligroso porque se puede perder data en bd.
